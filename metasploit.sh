@@ -29,7 +29,17 @@ echo -e $red 'Code By Saeed Ahmeed'
 #--------------------------------------------------
 #--------------------------------------------------
 #--------------------------------------------------
+#echo -e "$green"
+echo -e "$cyan"
+echo -e "|---{$yellow my ip$cyan }---| "
+       curl ifconfig.me
+echo -e "$blue"
+ifconfig wlan0 | grep -o 192..........
+#echo -e "$green "
+#date
+echo -e "$yellow"
 sleep 1
+#echo ''
 echo -e "$red                                          [00]back"
 echo -e "$cyan"
 echo "            [1]payload android ????????"
