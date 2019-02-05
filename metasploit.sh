@@ -37,7 +37,7 @@ ifconfig wlan0 | grep -o 192..........
 echo -e "$yellow"
 sleep 1
 #echo ''
-echo -e "$red                                exit [CTRL+C]"
+echo -e "$red                  [77] update          exit [CTRL+C]"
 echo -e "$cyan"
 echo "            [1]payload android ????????"
 echo "            [2]payload windows ????????"
@@ -239,6 +239,13 @@ then
 echo -e $green "Please Insert RHOSTS :>"
 read -p "                     RHOST------>" host
 msfconsole -x 'use auxiliary/scanner/http/http_version' -x 'set RHOSTS '$host -x 'run'
+fi
+if [ $Zoal -eq 77 ]
+then
+rm -rf $HOME/MetaSploit
+sleep 2
+clear
+echo -e "git clone https://github.com/saeedo201/MetaSploit"
 fi
 if [ $Zoal -eq 00 ]
 then
