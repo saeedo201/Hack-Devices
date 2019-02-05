@@ -243,11 +243,10 @@ fi
 if [ $Zoal -eq 77 ]
 then
 rm -rf $HOME/MetaSploit
-sleep 1
-clear
 git clone https://github.com/saeedo201/MetaSploit
 clear
 echo -e $cayn #---------->Hi New Update<----------#
+sleep 1
 fi
 if [ $Zoal -eq 00 ]
 then
