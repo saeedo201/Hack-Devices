@@ -243,7 +243,7 @@ fi
 if [ $Zoal -eq 77 ]
 then
 rm -rf $HOME/MetaSploit
-sleep 2
+sleep 1
 clear
 git clone https://github.com/saeedo201/MetaSploit
 clear
