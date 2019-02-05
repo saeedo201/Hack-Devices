@@ -247,6 +247,7 @@ rm -rf MetaSploit
 git clone https://github.com/saeedo201/MetaSploit
 echo -e $cayn #---------->Hi New Update<----------#
 sleep 2
+cd $HOME
 fi
 if [ $Zoal -eq 00 ]
 then

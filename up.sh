@@ -8,4 +8,5 @@ echo -e "git clone https://github.com/saeedo201/MetaSploit"
 clear
 echo -e $cayn #---------->Hi New Update<----------#
 sleep 2
+cd $HOME
 fi
