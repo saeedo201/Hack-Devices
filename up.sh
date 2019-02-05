@@ -2,9 +2,10 @@
 
 if [ $Zoal -eq 77 ]
 then
-rm -rf $HOME/MetaSploit
+cd $HOME
+rm -rf MetaSploit
 echo -e "git clone https://github.com/saeedo201/MetaSploit"
 clear
 echo -e $cayn #---------->Hi New Update<----------#
-sleep 1
+sleep 2
 fi

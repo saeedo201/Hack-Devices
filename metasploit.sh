@@ -242,9 +242,11 @@ msfconsole -x 'use auxiliary/scanner/http/http_version' -x 'set RHOSTS '$host -x
 fi
 if [ $Zoal -eq 77 ]
 then
-rm -rf $HOME/MetaSploit
+cd $HOME
+rm -rf MetaSploit
 git clone https://github.com/saeedo201/MetaSploit
 echo -e $cayn #---------->Hi New Update<----------#
+sleep 2
 fi
 if [ $Zoal -eq 00 ]
 then
