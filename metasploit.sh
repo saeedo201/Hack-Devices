@@ -20,9 +20,53 @@ echo -e
 #--------------------------------------------------
 #--------------------------------------------------
 echo ""
-echo -e $yellow	'Welcome In MetaSploit 2019 U Can Injoy With Me'
+echo -e $yellow	"Welcome" 
+sleep 0.4
+clear
+echo -e "Welcom In"
+sleep 0.4
+clear
+echo -e "Welcom In MetaSploit" 
+sleep 0.4
+clear
+echo -e "Welcome In MetaSploit 2019"
+sleep 0.4
+clear
+echo -e "Welcome In MetaSploit 2019 U"
+sleep 0.4
+clear
+echo -e "Welcome In MetaSploit 2019 U Can"
+sleep 0.4
+clear
+echo -e "Welcome In MetaSploit 2019 U Can Injoy"
+sleep 0.4
+clear
+echo -e "Welcome In MetaSploit 2019 U Can Injoy With"
+sleep 0.4
+clear
+echo -e "Welcome In MetaSploit 2019 U Can Injoy With Me"
 echo ""
-echo -e $red 'Code By Saeed Ahmeed'
+echo -e $p     "Copy"
+sleep 0.4
+clear
+echo -e "Copy Write"
+sleep 0.4
+clear
+echo -e "Copy Write By" 
+sleep 0.4
+clear
+echo -e "Copy Write By Saeed"
+sleep 0.4
+clear
+echo -e "Copy Write By Saeed Ahmeed"
+echo ""
+echo -e $p "My Telegram"
+sleep 0.3
+clear
+echo -e "My Telegram :" 
+sleep 0.3
+clear
+echo -e "My Telegram : @Zoalktoom"
 #--------------------------------------------------
 #--------------------------------------------------
 #--------------------------------------------------
@@ -37,7 +81,7 @@ ifconfig wlan0 | grep -o 192..........
 echo -e "$yellow"
 sleep 1
 #echo ''
-echo -e "$red                  [77] update          exit [CTRL+C]"
+echo -e "$red                  [77] update          exit [00]"
 echo -e "$cyan"
 echo "            [1]payload android ????????"
 echo "            [2]payload windows ????????"
@@ -249,9 +293,7 @@ echo -e $cayn #---------->Hi New Update<----------#
 sleep 2
 cd $HOME
 fi
-if [ $Zoal -eq 00 ]
+if [ $Zoal = 00 ]
 then
-clear 
-figlet -f mono12.tlf "Good Bye"
-exit
+figlet "God Bey"
 fi
