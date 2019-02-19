@@ -6,14 +6,14 @@ Don't Copy this code without give me the credit, nerd!
 
 
 
-#use
+#usage
 
-cd MetaSploit 
+cd Hack-Devices 
 
 ls
 
 
-chmod +x metasploit.sh
+chmod +x hacking.sh
 
 
-bash metasploit.sh
+bash hacking.sh
