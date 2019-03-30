@@ -79,7 +79,7 @@ def main():
         welcome()
         search()
         print " "
-        runntek(RR+"  Wordlist Is Not Corrected")
+        runntek(RR+"  Wordlist Is Not Corrected\n")
         runntek(RR+"  Please Edit The Wordlist Again")
         time.sleep(1)
         print WW+34*"  -"
@@ -107,7 +107,7 @@ def brute(password):
         if log != login and (not 'login_attempt' in log):
                         print("\033[92;1m\n\n[+]\033[97;1m Password Find \033[31;1m===| \033[96;1m{}".format(password)) 
                         print " "
-                        raw_input(WW+"TEKAN ENTER UNTUK KELUAR.....")
+                        raw_input(WW+"Press ENTER To Exit.....")
                         sys.exit(1)
 def search():
         global password
